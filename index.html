@@ -2,34 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>School Form</title>
-
+  <title>Leave Form</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#2563eb" />
-
   <style>
     html, body {
       margin: 0;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0f4f8;
+      font-family: Arial, sans-serif;
     }
-    iframe {
+    button {
+      padding: 20px 40px;
+      font-size: 24px;
+      background: #2563eb;
+      color: white;
       border: none;
-      width: 100%;
-      height: 100%;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #1e40af;
     }
   </style>
 </head>
 <body>
+  <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSde55oy3UCvm3rrifa1wvrBij9PZeBos7T4zi-ZvdYsdS9zMA/viewform', '_blank')">
+    Open Leave Form
+  </button>
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSde55oy3UCvm3rrifa1wvrBij9PZeBos7T4zi-ZvdYsdS9zMA/viewform?pli=1"></iframe>
-
-<script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
-  }
-</script>
-
+  <script>
+    // Register service worker for PWA install
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
 </body>
 </html>
